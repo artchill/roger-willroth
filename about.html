@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Roger Willroth</title>
+<meta name="description" content="Roger Willroth is an author and theologian with a Master of Divinity, writing from Ames, Iowa on faith, love, and biblical truth." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { parchment:'#FAF6EE', cream:'#F3E9D7', creamdeep:'#EADFC7', ink:'#241C15', sepia:'#6E5B45', oxblood:'#6E1A12', oxblooddeep:'#4E0F09', gold:'#BC8A2E', goldlight:'#DBB25A' },
+    fontFamily: { display:['Fraunces','Georgia','serif'], body:['Inter','system-ui','sans-serif'] },
+  }}};
+</script>
+
+<style>
+  html { scroll-behavior:smooth; }
+  body { background-color:#FAF6EE; background-image:radial-gradient(1100px 620px at 78% -8%, rgba(219,178,90,0.16), transparent 60%), radial-gradient(900px 700px at 0% 100%, rgba(110,26,18,0.06), transparent 55%); color:#241C15; }
+  ::selection { background:#BC8A2E; color:#FAF6EE; }
+  .rw-rule { height:1px; background:linear-gradient(90deg,transparent,rgba(188,138,46,0.55),transparent); }
+  .rw-eyebrow { font-family:'Inter',sans-serif; text-transform:uppercase; letter-spacing:0.28em; font-size:0.72rem; font-weight:600; color:#BC8A2E; }
+  .rw-dropcap::first-letter { font-family:'Fraunces',serif; float:left; font-size:4.4rem; line-height:0.82; padding:0.08em 0.14em 0 0; color:#6E1A12; font-weight:500; }
+  .rw-btn-gold { background:linear-gradient(180deg,#C89733 0%,#A9761F 100%); box-shadow:0 12px 26px -12px rgba(169,118,31,0.85), inset 0 1px 0 rgba(255,255,255,0.35); }
+  .rw-btn-gold:hover { filter:brightness(1.06); transform:translateY(-1px); }
+  .rw-reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+  .rw-reveal.rw-in { opacity:1; transform:none; }
+  a:focus-visible, button:focus-visible { outline:2px solid #6E1A12; outline-offset:3px; border-radius:2px; }
+  .rw-burger-box { position:relative; display:block; width:26px; height:18px; }
+  .rw-burger-bar { position:absolute; left:0; height:2px; width:100%; background:#6E1A12; border-radius:2px; transition:transform .3s ease, opacity .2s ease, top .3s ease; }
+  .rw-burger-bar:nth-child(1){ top:0; } .rw-burger-bar:nth-child(2){ top:8px; } .rw-burger-bar:nth-child(3){ top:16px; }
+  #rw-burger.rw-active .rw-burger-bar:nth-child(1){ top:8px; transform:rotate(45deg); }
+  #rw-burger.rw-active .rw-burger-bar:nth-child(2){ opacity:0; }
+  #rw-burger.rw-active .rw-burger-bar:nth-child(3){ top:8px; transform:rotate(-45deg); }
+  #rw-mobile-menu { max-height:0; opacity:0; overflow:hidden; transition:max-height .35s ease, opacity .3s ease; }
+  #rw-mobile-menu.rw-open { max-height:34rem; opacity:1; }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} .rw-reveal{opacity:1;transform:none;transition:none;} .rw-burger-bar,#rw-mobile-menu{transition:none;} }
+</style>
+</head>
+
+<body class="font-body antialiased">
+
+  <!-- ===== HEADER ===== -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-parchment/85 border-b border-gold/25">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <nav class="flex items-center justify-between h-16 sm:h-[4.5rem]">
+        <a href="index.html" class="flex items-baseline gap-2">
+          <span class="font-display text-2xl sm:text-[1.7rem] font-semibold text-oxblood tracking-tight">Roger&nbsp;Willroth</span>
+        </a>
+        <ul class="hidden md:flex items-center gap-6 lg:gap-7 text-[0.95rem] font-medium text-ink/80">
+          <li><a href="index.html"  class="hover:text-oxblood transition-colors">Home</a></li>
+          <li><a href="about.html"   class="text-oxblood">About</a></li>
+          <li><a href="books.html"   class="hover:text-oxblood transition-colors">Books</a></li>
+          <li><a href="reviews.html" class="hover:text-oxblood transition-colors">Reviews</a></li>
+          <li><a href="events.html"  class="hover:text-oxblood transition-colors">Events</a></li>
+          <li><a href="contact.html" class="hover:text-oxblood transition-colors">Contact</a></li>
+        </ul>
+        <div class="flex items-center gap-3">
+          <a href="https://www.amazon.com/dp/B0H7FN8MKB?lv=shuf&channelId=500&ref_=monarch_sidesheet_title&plpRedirect=mhFallback" target="_blank" rel="noopener"
+             class="hidden md:inline-block rw-btn-gold text-parchment font-semibold text-sm px-4 sm:px-5 py-2.5 rounded-full transition-all duration-200">Buy on Amazon</a>
+          <button id="rw-burger" type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 -mr-1 rounded-lg text-oxblood hover:bg-cream/70 transition-colors"
+                  aria-label="Open menu" aria-expanded="false" aria-controls="rw-mobile-menu">
+            <span class="rw-burger-box" aria-hidden="true"><span class="rw-burger-bar"></span><span class="rw-burger-bar"></span><span class="rw-burger-bar"></span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+    <div id="rw-mobile-menu" class="md:hidden border-t border-gold/20 bg-parchment/95 backdrop-blur-md">
+      <div class="mx-auto max-w-6xl px-5 py-5">
+        <ul class="flex flex-col divide-y divide-gold/15 text-lg font-medium text-ink/85">
+          <li><a href="index.html"   class="block py-3 hover:text-oxblood transition-colors">Home</a></li>
+          <li><a href="about.html"    class="block py-3 text-oxblood">About</a></li>
+          <li><a href="books.html"    class="block py-3 hover:text-oxblood transition-colors">Books</a></li>
+          <li><a href="reviews.html"  class="block py-3 hover:text-oxblood transition-colors">Reviews &amp; Press</a></li>
+          <li><a href="events.html"   class="block py-3 hover:text-oxblood transition-colors">Events</a></li>
+          <li><a href="contact.html"  class="block py-3 hover:text-oxblood transition-colors">Contact</a></li>
+        </ul>
+        <a href="https://www.amazon.com/dp/B0H7FN8MKB?lv=shuf&channelId=500&ref_=monarch_sidesheet_title&plpRedirect=mhFallback" target="_blank" rel="noopener"
+           class="rw-btn-gold text-parchment font-semibold text-base px-6 py-3.5 rounded-full transition-all duration-200 block text-center mt-5">Buy on Amazon</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="mx-auto max-w-6xl px-5 sm:px-8 pt-16 pb-10 sm:pt-20">
+    <div class="grid md:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-16 items-center rw-reveal">
+      <div class="flex justify-center">
+        <div class="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-cream border border-gold/40 flex items-center justify-center shadow-[0_24px_60px_-26px_rgba(78,15,9,0.45)]">
+          <span class="font-display text-oxblood text-8xl font-medium">RW</span>
+          <span class="absolute -bottom-3 rw-eyebrow bg-parchment px-3">Roger Willroth</span>
+        </div>
+      </div>
+      <div>
+        <p class="rw-eyebrow mb-5">About the author</p>
+        <h1 class="font-display text-oxblood font-semibold text-5xl sm:text-6xl leading-none">Roger Willroth</h1>
+        <p class="font-display italic text-gold text-2xl sm:text-3xl mt-3">A pastor's mind, a writer's heart</p>
+        <p class="text-ink/80 text-lg leading-relaxed mt-6 max-w-xl">
+          A theologian and author writing from the American heartland, Roger explores the questions
+          of faith with a scholar's rigor and a pastor's warmth — always returning to a single,
+          steadying conviction: that God is love.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-5 sm:px-8"><div class="rw-rule my-6"></div></div>
+
+  <!-- ===== BIO ===== -->
+  <section class="mx-auto max-w-3xl px-5 sm:px-8 py-14 sm:py-16 rw-reveal">
+    <p class="rw-dropcap text-ink/85 text-lg leading-relaxed mb-6">
+      Roger Willroth holds a bachelor's degree from the University of Northwestern in Roseville,
+      Minnesota, and a Master of Divinity from Bethel University Seminary in Shoreview, Minnesota.
+      Years of study in Scripture and theology shape everything he writes — not as dry academics,
+      but as a lifelong search for how faith actually meets the way we live.
+    </p>
+    <p class="text-ink/80 text-lg leading-relaxed mb-6">
+      He resides in Ames, Iowa, where he continues to write and explore themes of faith, love, and
+      biblical truth. His work invites readers of every background into an honest conversation —
+      one that takes the text seriously while leaving room for wonder.
+    </p>
+    <p class="text-ink/80 text-lg leading-relaxed">
+      Whether examining the nature of divine love or bringing a first-century disciple vividly to
+      life, Roger writes for the person in the pew and the seeker at the edge of it alike.
+    </p>
+  </section>
+
+  <!-- ===== CREDENTIALS ===== -->
+  <section class="bg-cream/60 border-y border-gold/20">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8 py-16 sm:py-20">
+      <p class="rw-eyebrow text-center mb-10 rw-reveal">Education &amp; background</p>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="rw-reveal bg-parchment rounded-xl p-7 border border-gold/25 text-center shadow-[0_18px_44px_-30px_rgba(78,15,9,0.5)]">
+          <p class="font-display text-oxblood text-2xl mb-1">B.A.</p>
+          <p class="font-semibold text-ink">University of Northwestern</p>
+          <p class="text-sepia text-sm mt-1">Roseville, Minnesota</p>
+        </div>
+        <div class="rw-reveal bg-parchment rounded-xl p-7 border border-gold/25 text-center shadow-[0_18px_44px_-30px_rgba(78,15,9,0.5)]">
+          <p class="font-display text-oxblood text-2xl mb-1">M.Div.</p>
+          <p class="font-semibold text-ink">Bethel University Seminary</p>
+          <p class="text-sepia text-sm mt-1">Shoreview, Minnesota</p>
+        </div>
+        <div class="rw-reveal bg-parchment rounded-xl p-7 border border-gold/25 text-center shadow-[0_18px_44px_-30px_rgba(78,15,9,0.5)]">
+          <p class="font-display text-oxblood text-2xl mb-1">Home</p>
+          <p class="font-semibold text-ink">Ames, Iowa</p>
+          <p class="text-sepia text-sm mt-1">Writer &amp; theologian</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PULL QUOTE ===== -->
+  <section class="bg-oxblood text-parchment">
+    <div class="mx-auto max-w-3xl px-5 sm:px-8 py-20 sm:py-24 text-center rw-reveal">
+      <div class="text-goldlight text-6xl font-display leading-none mb-2">“</div>
+      <p class="font-display text-3xl sm:text-[2.4rem] leading-[1.2]">
+        I wanted to write the book I wish someone had handed me years ago — not about a distant judge,
+        but about a God whose very nature is love.
+      </p>
+      <p class="rw-eyebrow text-goldlight mt-8">Roger Willroth</p>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="mx-auto max-w-3xl px-5 sm:px-8 py-20 text-center rw-reveal">
+    <h2 class="font-display text-4xl sm:text-5xl text-ink font-semibold leading-tight mb-6">Read his work</h2>
+    <p class="text-ink/75 text-lg leading-relaxed max-w-xl mx-auto mb-9">
+      Start with <span class="italic">God Is Love</span>, and watch for the forthcoming
+      <span class="italic">Memoirs of the Beloved</span>.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="books.html" class="rw-btn-gold text-parchment font-semibold px-8 py-3.5 rounded-full text-base transition-all duration-200">Explore the books</a>
+      <a href="contact.html" class="inline-flex items-center gap-2 font-semibold text-oxblood px-6 py-3.5 rounded-full border border-oxblood/30 hover:bg-oxblood hover:text-parchment transition-colors duration-200">Get in touch <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-parchment border-t border-gold/25">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8 py-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-left">
+          <p class="font-display text-2xl text-oxblood font-semibold">Roger Willroth</p>
+          <p class="text-sepia text-sm mt-1">Author · Ames, Iowa</p>
+        </div>
+        <ul class="flex flex-wrap justify-center gap-x-7 gap-y-2 text-sm font-medium text-ink/75">
+          <li><a href="index.html"  class="hover:text-oxblood transition-colors">Home</a></li>
+          <li><a href="about.html"   class="hover:text-oxblood transition-colors">About</a></li>
+          <li><a href="books.html"   class="hover:text-oxblood transition-colors">Books</a></li>
+          <li><a href="reviews.html" class="hover:text-oxblood transition-colors">Reviews &amp; Press</a></li>
+          <li><a href="events.html"  class="hover:text-oxblood transition-colors">Events</a></li>
+          <li><a href="contact.html" class="hover:text-oxblood transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div class="rw-rule my-8"></div>
+      <p class="text-center text-xs text-sepia/80">© <span id="rw-year"></span> Roger Willroth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('rw-year').textContent = new Date().getFullYear();
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('.rw-reveal');
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach(function(el){el.classList.add('rw-in');}); return; }
+      var io = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('rw-in'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+    (function () {
+      var burger = document.getElementById('rw-burger'), menu = document.getElementById('rw-mobile-menu');
+      if (!burger || !menu) return;
+      function setOpen(open){ menu.classList.toggle('rw-open',open); burger.classList.toggle('rw-active',open); burger.setAttribute('aria-expanded',String(open)); burger.setAttribute('aria-label',open?'Close menu':'Open menu'); }
+      burger.addEventListener('click', function(){ setOpen(!menu.classList.contains('rw-open')); });
+      menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
+      document.addEventListener('keydown', function(e){ if(e.key==='Escape') setOpen(false); });
+    })();
+  </script>
+</body>
+</html>

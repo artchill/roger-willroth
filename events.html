@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Events &amp; Book Fairs — Roger Willroth</title>
+<meta name="description" content="God Is Love on the world stage — featured at the Beijing, Hong Kong, and Los Angeles book fairs." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { parchment:'#FAF6EE', cream:'#F3E9D7', creamdeep:'#EADFC7', ink:'#241C15', sepia:'#6E5B45', oxblood:'#6E1A12', oxblooddeep:'#4E0F09', gold:'#BC8A2E', goldlight:'#DBB25A' },
+    fontFamily: { display:['Fraunces','Georgia','serif'], body:['Inter','system-ui','sans-serif'] },
+  }}};
+</script>
+
+<style>
+  html { scroll-behavior:smooth; }
+  body { background-color:#FAF6EE; background-image:radial-gradient(1100px 620px at 78% -8%, rgba(219,178,90,0.16), transparent 60%), radial-gradient(900px 700px at 0% 100%, rgba(110,26,18,0.06), transparent 55%); color:#241C15; }
+  ::selection { background:#BC8A2E; color:#FAF6EE; }
+  .rw-rule { height:1px; background:linear-gradient(90deg,transparent,rgba(188,138,46,0.55),transparent); }
+  .rw-eyebrow { font-family:'Inter',sans-serif; text-transform:uppercase; letter-spacing:0.28em; font-size:0.72rem; font-weight:600; color:#BC8A2E; }
+  .rw-btn-gold { background:linear-gradient(180deg,#C89733 0%,#A9761F 100%); box-shadow:0 12px 26px -12px rgba(169,118,31,0.85), inset 0 1px 0 rgba(255,255,255,0.35); }
+  .rw-btn-gold:hover { filter:brightness(1.06); transform:translateY(-1px); }
+  .rw-reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+  .rw-reveal.rw-in { opacity:1; transform:none; }
+  a:focus-visible, button:focus-visible { outline:2px solid #6E1A12; outline-offset:3px; border-radius:2px; }
+  .rw-burger-box { position:relative; display:block; width:26px; height:18px; }
+  .rw-burger-bar { position:absolute; left:0; height:2px; width:100%; background:#6E1A12; border-radius:2px; transition:transform .3s ease, opacity .2s ease, top .3s ease; }
+  .rw-burger-bar:nth-child(1){ top:0; } .rw-burger-bar:nth-child(2){ top:8px; } .rw-burger-bar:nth-child(3){ top:16px; }
+  #rw-burger.rw-active .rw-burger-bar:nth-child(1){ top:8px; transform:rotate(45deg); }
+  #rw-burger.rw-active .rw-burger-bar:nth-child(2){ opacity:0; }
+  #rw-burger.rw-active .rw-burger-bar:nth-child(3){ top:8px; transform:rotate(-45deg); }
+  #rw-mobile-menu { max-height:0; opacity:0; overflow:hidden; transition:max-height .35s ease, opacity .3s ease; }
+  #rw-mobile-menu.rw-open { max-height:34rem; opacity:1; }
+
+  /* ---- gallery tile ---- */
+  .rw-tile { position:relative; overflow:hidden; border-radius:0.75rem; border:1px solid rgba(188,138,46,0.28); box-shadow:0 16px 40px -28px rgba(78,15,9,0.5); cursor:zoom-in; }
+  .rw-tile img { display:block; width:100%; aspect-ratio:1/1; object-fit:cover; transition:transform .5s ease; }
+  .rw-tile:hover img { transform:scale(1.05); }
+
+  /* ---- lightbox ---- */
+  #rw-lightbox { position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center; padding:1.5rem; background:rgba(36,15,9,0.88); backdrop-filter:blur(4px); }
+  #rw-lightbox.rw-show { display:flex; }
+  #rw-lightbox img { max-width:min(92vw,720px); max-height:86vh; border-radius:6px; box-shadow:0 30px 80px -20px rgba(0,0,0,0.7); }
+  #rw-lightbox-close { position:absolute; top:1.1rem; right:1.3rem; color:#FAF6EE; font-size:2rem; line-height:1; background:none; border:none; cursor:pointer; }
+
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} .rw-reveal{opacity:1;transform:none;transition:none;} .rw-tile img,.rw-burger-bar,#rw-mobile-menu{transition:none;} }
+</style>
+</head>
+
+<body class="font-body antialiased">
+
+  <!-- ===== HEADER ===== -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-parchment/85 border-b border-gold/25">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <nav class="flex items-center justify-between h-16 sm:h-[4.5rem]">
+        <a href="index.html" class="flex items-baseline gap-2"><span class="font-display text-2xl sm:text-[1.7rem] font-semibold text-oxblood tracking-tight">Roger&nbsp;Willroth</span></a>
+        <ul class="hidden md:flex items-center gap-6 lg:gap-7 text-[0.95rem] font-medium text-ink/80">
+          <li><a href="index.html"  class="hover:text-oxblood transition-colors">Home</a></li>
+          <li><a href="about.html"   class="hover:text-oxblood transition-colors">About</a></li>
+          <li><a href="books.html"   class="hover:text-oxblood transition-colors">Books</a></li>
+          <li><a href="reviews.html" class="hover:text-oxblood transition-colors">Reviews</a></li>
+          <li><a href="events.html"  class="text-oxblood">Events</a></li>
+          <li><a href="contact.html" class="hover:text-oxblood transition-colors">Contact</a></li>
+        </ul>
+        <div class="flex items-center gap-3">
+          <a href="https://www.amazon.com/dp/B0H7FN8MKB?lv=shuf&channelId=500&ref_=monarch_sidesheet_title&plpRedirect=mhFallback" target="_blank" rel="noopener"
+             class="hidden md:inline-block rw-btn-gold text-parchment font-semibold text-sm px-4 sm:px-5 py-2.5 rounded-full transition-all duration-200">Buy on Amazon</a>
+          <button id="rw-burger" type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 -mr-1 rounded-lg text-oxblood hover:bg-cream/70 transition-colors"
+                  aria-label="Open menu" aria-expanded="false" aria-controls="rw-mobile-menu">
+            <span class="rw-burger-box" aria-hidden="true"><span class="rw-burger-bar"></span><span class="rw-burger-bar"></span><span class="rw-burger-bar"></span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+    <div id="rw-mobile-menu" class="md:hidden border-t border-gold/20 bg-parchment/95 backdrop-blur-md">
+      <div class="mx-auto max-w-6xl px-5 py-5">
+        <ul class="flex flex-col divide-y divide-gold/15 text-lg font-medium text-ink/85">
+          <li><a href="index.html"   class="block py-3 hover:text-oxblood transition-colors">Home</a></li>
+          <li><a href="about.html"    class="block py-3 hover:text-oxblood transition-colors">About</a></li>
+          <li><a href="books.html"    class="block py-3 hover:text-oxblood transition-colors">Books</a></li>
+          <li><a href="reviews.html"  class="block py-3 hover:text-oxblood transition-colors">Reviews &amp; Press</a></li>
+          <li><a href="events.html"   class="block py-3 text-oxblood">Events</a></li>
+          <li><a href="contact.html"  class="block py-3 hover:text-oxblood transition-colors">Contact</a></li>
+        </ul>
+        <a href="https://www.amazon.com/dp/B0H7FN8MKB?lv=shuf&channelId=500&ref_=monarch_sidesheet_title&plpRedirect=mhFallback" target="_blank" rel="noopener"
+           class="rw-btn-gold text-parchment font-semibold text-base px-6 py-3.5 rounded-full transition-all duration-200 block text-center mt-5">Buy on Amazon</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <section class="mx-auto max-w-6xl px-5 sm:px-8 pt-16 pb-8 sm:pt-20 text-center rw-reveal">
+    <p class="rw-eyebrow mb-5">On the world stage</p>
+    <h1 class="font-display text-oxblood font-semibold text-5xl sm:text-6xl lg:text-7xl leading-none">Events &amp; Book Fairs</h1>
+    <p class="text-ink/75 text-lg leading-relaxed max-w-2xl mx-auto mt-6">
+      From Beijing to Los Angeles, <span class="italic">God Is Love</span> has found readers across
+      continents. A look at the book's presence at international book fairs.
+    </p>
+    <div class="rw-rule mt-10 max-w-md mx-auto"></div>
+  </section>
+
+  <!-- ===== BEIJING ===== -->
+  <section class="mx-auto max-w-6xl px-5 sm:px-8 py-12 sm:py-14">
+    <div class="flex items-baseline gap-4 mb-7 rw-reveal">
+      <h2 class="font-display text-3xl sm:text-4xl text-ink font-semibold">Beijing Book Fair</h2>
+      <span class="rw-eyebrow">China</span>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 rw-reveal">
+      <button class="rw-tile" data-full="https://raw.githubusercontent.com/artchill/roger-willroth/main/BJWillrothBF1.png"><img loading="lazy" src="https://raw.githubusercontent.com/artchill/roger-willroth/main/BJWillrothBF1.png" alt="God Is Love at the Beijing Book Fair — display 1" /></button>
+      <button class="rw-tile" data-full="https://raw.githubusercontent.com/artchill/roger-willroth/main/BJWillrothBF2.png"><img loading="lazy" src="https://raw.githubusercontent.com/artchill/roger-willroth/main/BJWillrothBF2.png" alt="God Is Love at the Beijing Book Fair — display 2" /></button>
+      <button class="rw-tile" data-full="https://raw.githubusercontent.com/artchill/roger-willroth/main/BJWillrothBF3.png"><img loading="lazy" src="https://raw.githubusercontent.com/artchill/roger-willroth/main/BJWillrothBF3.png" alt="God Is Love at the Beijing Book Fair — display 3" /></button>
+      <button class="rw-tile" data-full="https://raw.githubusercontent.com/artchill/roger-willroth/main/BJWillrothBF4.png"><img loading="lazy" src="https://raw.githubusercontent.com/artchill/roger-willroth/main/BJWillrothBF4.png" alt="God Is Love at the Beijing Book Fair — display 4" /></button>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-5 sm:px-8"><div class="rw-rule"></div></div>
+
+  <!-- ===== HONG KONG ===== -->
+  <section class="mx-auto max-w-6xl px-5 sm:px-8 py-12 sm:py-14">
+    <div class="flex items-baseline gap-4 mb-7 rw-reveal">
+      <h2 class="font-display text-3xl sm:text-4xl text-ink font-semibold">Hong Kong Book Fair</h2>
+      <span class="rw-eyebrow">Hong Kong</span>
+    </div>
+    <div class="grid grid-cols-2 gap-4 max-w-2xl rw-reveal">
+      <button class="rw-tile" data-full="https://raw.githubusercontent.com/artchill/roger-willroth/main/HKWillrothBF1.png"><img loading="lazy" src="https://raw.githubusercontent.com/artchill/roger-willroth/main/HKWillrothBF1.png" alt="God Is Love at the Hong Kong Book Fair — display 1" /></button>
+      <button class="rw-tile" data-full="https://raw.githubusercontent.com/artchill/roger-willroth/main/HKWillrothBF2.png"><img loading="lazy" src="https://raw.githubusercontent.com/artchill/roger-willroth/main/HKWillrothBF2.png" alt="God Is Love at the Hong Kong Book Fair — display 2" /></button>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-5 sm:px-8"><div class="rw-rule"></div></div>
+
+  <!-- ===== LOS ANGELES ===== -->
+  <section class="mx-auto max-w-6xl px-5 sm:px-8 py-12 sm:py-14">
+    <div class="flex items-baseline gap-4 mb-7 rw-reveal">
+      <h2 class="font-display text-3xl sm:text-4xl text-ink font-semibold">LA Book Fair</h2>
+      <span class="rw-eyebrow">United States</span>
+    </div>
+    <div class="grid grid-cols-2 gap-4 max-w-2xl rw-reveal">
+      <button class="rw-tile" data-full="https://raw.githubusercontent.com/artchill/roger-willroth/main/LAWillrothBF.png"><img loading="lazy" src="https://raw.githubusercontent.com/artchill/roger-willroth/main/LAWillrothBF.png" alt="God Is Love at the LA Book Fair — display 1" /></button>
+      <button class="rw-tile" data-full="https://raw.githubusercontent.com/artchill/roger-willroth/main/LAWillrothBF1.png"><img loading="lazy" src="https://raw.githubusercontent.com/artchill/roger-willroth/main/LAWillrothBF1.png" alt="God Is Love at the LA Book Fair — display 2" /></button>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="relative overflow-hidden bg-oxblood text-parchment mt-6">
+    <div class="absolute inset-0 opacity-40" style="background:radial-gradient(600px 300px at 50% 0%, rgba(219,178,90,0.35), transparent 70%);"></div>
+    <div class="relative mx-auto max-w-3xl px-5 sm:px-8 py-20 text-center rw-reveal">
+      <p class="rw-eyebrow text-goldlight mb-6">Join readers worldwide</p>
+      <h2 class="font-display text-4xl sm:text-5xl leading-tight mb-8">The conversation is just beginning.</h2>
+      <a href="https://www.amazon.com/dp/B0H7FN8MKB?lv=shuf&channelId=500&ref_=monarch_sidesheet_title&plpRedirect=mhFallback" target="_blank" rel="noopener"
+         class="rw-btn-gold text-parchment font-semibold px-9 py-4 rounded-full text-lg inline-block transition-all duration-200">Buy on Amazon</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-parchment border-t border-gold/25">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8 py-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-left">
+          <p class="font-display text-2xl text-oxblood font-semibold">Roger Willroth</p>
+          <p class="text-sepia text-sm mt-1">Author · Ames, Iowa</p>
+        </div>
+        <ul class="flex flex-wrap justify-center gap-x-7 gap-y-2 text-sm font-medium text-ink/75">
+          <li><a href="index.html"  class="hover:text-oxblood transition-colors">Home</a></li>
+          <li><a href="about.html"   class="hover:text-oxblood transition-colors">About</a></li>
+          <li><a href="books.html"   class="hover:text-oxblood transition-colors">Books</a></li>
+          <li><a href="reviews.html" class="hover:text-oxblood transition-colors">Reviews &amp; Press</a></li>
+          <li><a href="events.html"  class="hover:text-oxblood transition-colors">Events</a></li>
+          <li><a href="contact.html" class="hover:text-oxblood transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div class="rw-rule my-8"></div>
+      <p class="text-center text-xs text-sepia/80">© <span id="rw-year"></span> Roger Willroth. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="rw-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
+    <button id="rw-lightbox-close" aria-label="Close">&times;</button>
+    <img id="rw-lightbox-img" src="" alt="" />
+  </div>
+
+  <script>
+    document.getElementById('rw-year').textContent = new Date().getFullYear();
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('.rw-reveal');
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach(function(el){el.classList.add('rw-in');}); return; }
+      var io = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('rw-in'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+    (function () {
+      var burger = document.getElementById('rw-burger'), menu = document.getElementById('rw-mobile-menu');
+      if (!burger || !menu) return;
+      function setOpen(open){ menu.classList.toggle('rw-open',open); burger.classList.toggle('rw-active',open); burger.setAttribute('aria-expanded',String(open)); burger.setAttribute('aria-label',open?'Close menu':'Open menu'); }
+      burger.addEventListener('click', function(){ setOpen(!menu.classList.contains('rw-open')); });
+      menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
+      document.addEventListener('keydown', function(e){ if(e.key==='Escape') setOpen(false); });
+    })();
+    // lightbox
+    (function () {
+      var box = document.getElementById('rw-lightbox');
+      var img = document.getElementById('rw-lightbox-img');
+      var closeBtn = document.getElementById('rw-lightbox-close');
+      function open(src, alt){ img.src = src; img.alt = alt || ''; box.classList.add('rw-show'); document.body.style.overflow='hidden'; }
+      function close(){ box.classList.remove('rw-show'); img.src=''; document.body.style.overflow=''; }
+      document.querySelectorAll('.rw-tile').forEach(function (t) {
+        t.addEventListener('click', function () { open(t.getAttribute('data-full'), t.querySelector('img').alt); });
+      });
+      closeBtn.addEventListener('click', close);
+      box.addEventListener('click', function (e) { if (e.target === box) close(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    })();
+  </script>
+</body>
+</html>
